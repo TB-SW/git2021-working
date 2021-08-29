@@ -1,0 +1,22 @@
+<!-- 임의의 DOM 요소 노드 elem이 있다고 가정해봅시다.
+
+elem.lastChild.nextSibling은 항상 null일까요?
+elem.children[0].previousSibling은 항상 null일까요? -->
+
+<html>
+
+<body>
+  <div>사용자:</div>
+  <ul>
+    <li>John</li>
+    <li>Pete</li>
+  </ul>
+  <script>
+    // sibling: node 탐색 (textnode, htmlelement)
+    // children: element 탐색
+    console.log(document.body.lastChild.nextSibling);
+    console.log(document.body.children[0].previousSibling);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<html>
+
+<body>
+  <script>
+    let menu = 0;
+    let num = 0;
+
+    // (true) 참 이라고 쐐기를 박아버렸네 무조건 참 그래서 무한대로 반복된다.
+    // 그러면 무조건 브레이크 걸어줘야 된다. 
+    // 잘못하다가는 우리집 컴퓨터 녹겠네 
+    while (true) {
+      console.log("(1) square"); ////출력문
+      console.log("(2) square root"); ////출력문
+      console.log("(3) log"); //출력문
+      let input = prompt("원하는 메뉴(1~3)를 선택하세요. (종료:0)");
+      console.log(input); // 문자열 인가 숫자인가?
+
+      let tmp = input;
+      menu = parseInt(tmp); //입력받은 문자열 (tmp)를 숫자로 변환해주는 함수 (메서드)
+
+      if (menu == 0) {
+        alert("프로그램을 종료합니다.");
+        break;
+      } 
+      else if (!(1 <= menu && menu <= 3)) { //이게 무슨 조건인가
+        alert("메뉴를 잘못 선택하셨습니다. (종료는 0)");
+        continue;
+      }
+
+      alert("선택하신 메뉴는" + menu + "번 입니다.");
+    }
+  </script>
+</body>
+
+</html>

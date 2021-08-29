@@ -1,0 +1,29 @@
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    /* 선택 :: 의사요소 (pseudo element) */
+
+    /* 해당 선택 요소의 컨텐츠의 첫번째 글자에 적용 */
+    p::first-letter {
+      font-size: 2em;
+    }
+
+    p::first-line {
+      color: green;
+    }
+
+    /* 특정 키워드만을 제어하고 싶을 때는 js로 해야 한다. html , css 만으로는 불가 */
+  </style>
+</head>
+
+<body>
+  <!-- 의사 요소(엘리먼트) 엘리먼트는 아니지만 유사한것이다 라는 뜻 -->
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eum tenetur omnis, debitis,
+    vel natus quibusdam facere mollitia placeat
+    cum cumque est molestiae corporis rerum obcaecati quo, laboriosam ipsam atque.</p>
+  <p>안녕하세요</p>
+</body>
+
+</html>

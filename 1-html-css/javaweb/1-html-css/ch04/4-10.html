@@ -1,0 +1,36 @@
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    .box {
+      width: 250px;
+      height: 200px;
+    }
+
+    .box:nth-child(1) {
+      display: inline;
+    /* inline은 width/height를 결정하지 못함 */
+    /* inline 형식의 크기는 컨텐츠 크기 */
+    }
+
+    .box:nth-child(2) {
+      /* inline 속성과 ?? 왼쪽 ->오른쪽 */
+      /* block과 같은 width/height를 설정할 수 있음 */
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut enim assumenda possimus, quisquam autem
+    perferendis
+    quaerat deleniti quasi aspernatur, quos illo praesentium doloremque quam eius. Ipsa repellendus ut itaque facilis.
+  </div>
+  <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut enim assumenda possimus, quisquam autem
+    perferendis
+    quaerat deleniti quasi aspernatur, quos illo praesentium doloremque quam eius. Ipsa repellendus ut itaque facilis.
+  </div>
+</body>
+
+</html>

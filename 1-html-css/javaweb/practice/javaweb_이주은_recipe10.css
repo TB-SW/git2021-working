@@ -1,0 +1,292 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Yeon Sung', cursive;
+}
+
+html {
+  font-size: 22px;
+  line-height: 32px;
+}
+
+header {
+  grid-area: header;
+}
+
+.banner {
+  grid-area: banner;
+}
+
+.nav1 {
+  grid-area: nav1;
+}
+
+.nav2 {
+  grid-area: nav2;
+}
+
+
+
+aside {
+  grid-area: adver;
+}
+
+article {
+  grid-area: content;
+}
+
+footer {
+  grid-area: footer;
+}
+
+
+/* extra-small */
+body {
+  display: grid;
+  gap: 20px;
+  grid-template-areas: 
+  "header"
+  "banner"
+  "nav1"
+  "content"
+  "adver"
+  "footer"
+  ;
+ 
+
+  background-color: rgb(194, 232, 250);
+}
+
+.nav1 {
+  position: sticky;
+  top: 0.4rem;
+  height: fit-content;
+  border-radius: 10px;
+  background-color: #f4f3eebe;
+  box-shadow: 1px 1px 10px rgba(92, 104, 21, 0.301);
+}
+
+.nav1 ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-left: 0px;
+  list-style: none;
+}
+
+.nav2 {
+  display: none;
+  border-radius: 10px;
+  background-color: #f4f3eebe;
+  box-shadow: 1px 1px 10px rgba(92, 104, 21, 0.301);
+}
+
+.nav2 ul {
+  list-style-type: none;
+}
+
+
+
+.banner {
+  width: auto;
+  justify-content: center;
+  align-content: center;
+  max-height: 90%;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px rgba(92, 104, 21, 0.301);
+
+}
+
+.banner img {
+  width: 96vw;
+  
+}
+
+.mainimg {
+  display: grid;
+  width: auto;
+  justify-content: center;
+  align-content: center;
+}
+
+.mainimg img {
+  width: 75vw;
+}
+
+section {
+  display: grid;
+  width: auto;
+  justify-content: center;
+  align-content: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-color: #f4f3eebe;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(92, 104, 21, 0.301);
+
+
+
+}
+
+.adver div {
+  display: grid;
+  width: auto;
+  gap: 10px;
+  justify-content: center;
+  align-content: center;
+  grid-template-areas: 
+    "1 2 3"
+    "4 5 6"
+    "7 8 9"
+  ;
+
+}
+
+.adverimg img {
+  width: 25vw;
+  box-shadow: 1px 1px 10px rgba(92, 104, 21, 0.301);
+
+}
+
+.footercontainer {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+
+
+/* small */
+@media (min-width: 600px) {
+  body {
+    width: auto;
+    grid-template-columns: 20vw 80vw;
+    grid-template-areas: 
+      "header header"
+      "banner banner"
+      "nav1   nav1"
+      "nav2   content"
+      "nav2   content"
+      "nav2   content"
+      "nav2   content"
+      "nav2   content"
+      "nav2   content"
+      "nav2   content"
+      "nav2   content"
+      "footer footer"
+    ;
+    background-color: rgb(139, 218, 255);
+  }
+
+  .nav2 {
+    display: inline-block;
+    position: sticky;
+    top: 7rem;
+    height: fit-content;
+  }
+
+  .adver {
+    display: none;
+  }
+
+  .mainimg img {
+    width: 70vw;
+  }
+
+
+
+}
+
+
+/* medium */
+
+@media (min-width: 960px) {
+  body {
+    background-color: rgb(80, 200, 255);
+    width: auto;
+    grid-template-columns: 30vw 70vw;
+    grid-template-areas:
+      "header header"
+      "banner banner"
+      "nav1   nav1"
+      "nav2   content"
+      "adver  content"
+      "  .    content"
+      "  .    content"
+      "  .    content"
+      "  .    content"
+      "  .    content"
+      "  .    content"
+      "  .    content"
+      "  .    content"
+      "  .    content"
+      "footer footer"
+    ;
+  }
+
+  .adver {
+    display: block;
+  }
+
+  .adver img {
+    width: 8vw;
+  }
+
+  .footercontainer {
+
+    flex-direction: row;
+  }
+
+  .mainimg img {
+    width: 60vw;
+  }
+
+
+}
+
+/* large */
+@media (min-width: 1264px) {
+  body {
+    background-color: rgb(35, 176, 241);
+    width: auto;
+    grid-template-columns: 16vw 60vw 24vw;
+    grid-template-areas: 
+      "header  header  header"
+      "banner  banner  banner"
+      "nav1    nav1    nav1"
+      "nav2    content adver"
+      "  .     content   .  "
+      "  .     content   .  "
+      "  .     content   .  "
+      "  .     content   .  "
+      "footer  footer  footer"
+    ;
+  }
+
+  .adver img {
+    width: 6vw;
+  }
+
+  .mainimg img {
+    width: 50vw;
+  }
+
+  .adver {
+    position: sticky;
+    top: 7rem;
+    background-color: #f4f3eebe;
+    height: 25rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(92, 104, 21, 0.301);
+  }
+
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    * {
+      /* 태그 크기를 쉽게 가늠하게 함 */
+      box-sizing: border-box;
+    }
+
+    .box {
+      margin: 10px;
+      padding: 10px;
+      width: 250px;
+      height: 200px;
+      border: 5px solid black;
+      /* 보더는 경계선이라는 뜻 마진은 합치지 않는다. */
+    }
+
+    .one {
+      background-color: red;
+      /* html 기본(default) */
+      box-sizing: content-box;
+      /* 언어의 성질을 바꿀 수 없기 때문에 */
+    }
+
+    .two {
+      background-color: orange;
+      /* width/height가 border 포함 안쪽 영역의 크기 */
+      /* 태그 크기를 쉽게 가늠하게 함 */
+      /* box-sizing: border-box; */
+      /* css 작성시 *{}에 넣고 만들기 시작한다. */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box one">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, delectus ipsa aliquam voluptatem ut, fuga modi,
+    placeat nulla eaque tempore ipsum. Est aliquid, vero voluptates necessitatibus voluptatibus quisquam fugiat commodi.
+  </div>
+
+  <div class="box two">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates unde similique impedit
+    nostrum, nesciunt
+    asperiores,
+    illum itaque quo non earum modi autem excepturi fugiat hic. Soluta quibusdam non rerum natus.
+  </div>
+</body>
+
+</html>

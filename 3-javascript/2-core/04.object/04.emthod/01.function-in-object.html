@@ -1,0 +1,58 @@
+<html>
+
+<body>
+  <!-- <script>
+    // // 메서드 (method) : 객체 내부의 함수
+    // let user = {
+    //   name: "John",
+    //   age: 30,
+    //   // 메서드(함수)
+    //   sayHi: function () {
+    //     alert("안녕하세요!");
+    //   }
+    // };
+    // user.sayHi();
+  </script> -->
+
+  <!-- <script>
+    // 객체안에 객체도 넣을 수 있음
+    let user = {
+    name: "John",
+    age: 30,
+    // 메서드(함수)
+    sayHi: function () {
+    alert("안녕하세요!");
+    }
+    };
+    user.sayHi();
+  </script> -->
+
+  <!-- <script>
+    let user = {
+      name: "John",
+      age: 30,
+      // 메서드(함수)
+      sayHi: function () {
+        alert("안녕하세요!");
+      }
+    };
+    user.sayHi();
+  </script> -->
+
+  <script>
+    let user = {
+      name: "John",
+      age: 30,
+    };
+    // 함수 선언
+    function sayHi() {
+      alert("안녕하세요!");
+    };
+
+    // 선언된 함수를 메서드로 등록
+    user.sayHi = sayHi;
+    user.sayHi(); //안녕하세요!
+  </script>
+</body>
+
+</html>

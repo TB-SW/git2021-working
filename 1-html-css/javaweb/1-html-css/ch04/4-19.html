@@ -1,0 +1,31 @@
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    .button {
+      width: 150px;
+      height: 70px;
+      background-color: rgb(251, 109, 15);
+    }
+
+    .button>a {
+      display: block;
+      text-align: center;
+      line-height: 70px;
+      /* 태그 높이는 커졌지만 컨텐츠에 들어오는 높이는 똑같다 */
+      /* 그래서 변동이 없기 때문에 line-height를 통해 늘려줘야 가운데로 정렬이 가능 */
+      /* line-height 속성을 부모 높이만큼 줘야 세로로 가운데 정렬 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="button">
+    <a href="#">
+      Click
+    </a>
+  </div>
+</body>
+
+</html>

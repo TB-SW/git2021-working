@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <title>UI 구현 과제</title>
+
+</head>
+
+<body style="width: 700px;" class="mx-auto">
+  <h1 class="text-center my-5">연락처 관리</h1>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+
+  <form id="form-input" class="d-flex" onsubmit="return false">
+    <input type="text" class="form-control1 me-2 form-input" placeholder="이름">
+    <input type="text" class="form-control1 me-2 form-input" placeholder="전화번호">
+    <input type="text" class="form-control1 me-2 form-input" placeholder="이메일">
+    <button id="add-button" type="button" class="btn btn-outline-primary text no-wrap">추가</button>
+  </form>
+
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>이름</th>
+        <th>전화번호</th>
+        <th>이메일</th>
+        <th>작업</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr id="tr"></tr>
+    </tbody>
+  </table>
+
+  <script>
+    const input = document.querySelectorAll(".form-input");
+    const button = document.querySelector("#add-button");
+    const newTr = document.querySelector("#tr");
+    const inputArray = Array.from(input);
+    const form = document.querySelector("#form-input");
+
+    let i = 1;
+
+    form.addEventListener('keyup', (event) => {
+      if (event.keycode == 13) {
+        add(event);
+      }
+    })
+
+    function add() {
+      for (let index of inputArray) {
+        console.log(index.value);
+      }
+
+      if (!inputArray[0].value || !inputArray[1].value || !inputArray[2].value) {
+        const alertWarning = /*html*/ `
+          <div class= "alert alert-danger alert-dismissible my-1" role="alert">
+            이름, 전화번호, 이메일을 빠짐없이 기입 하십시오.
+            <button type= "button" class= "btn-close" data-bs-dismiss="alert" aria-lable="close"></button>
+          </div>
+          `;
+        form.insertAdjacentHTML("afterend", alertWarning);
+        return;
+      }
+    
+
+    const tr = /*html*/ `
+          <td>${i++}</td>
+          <td>${inputArray[0].value}</td>
+          <td>${inputArray[1].value}</td>
+          <td>${inputArray[2].value}</td>
+          <td id="removeBtn"><button class="btn btn-outline-danger btn-sm remove">삭제</button></td>
+          `;
+
+    newTr.insertAdjacentHTML("afterend", tr);
+
+    form.reset();
+
+    const removeBtn = document.querySelector("#removeBtn");
+    removeBtn.addEventListener('click', remove)
+  }
+    function remove(event) {
+      const tr = event.target.parentNode.parentNode;
+      tr.remove();
+    }
+
+    button.addEventListener('click', add);
+  </script>
+</body>
+
+</html>

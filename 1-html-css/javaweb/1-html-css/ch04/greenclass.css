@@ -1,0 +1,38 @@
+body {
+  height: 2000px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  /* absolute 절대적인 */
+  /* 문서기준으로 특정위치에 요소를 배치할 수 있음 */
+  position: absolute;
+}
+
+.red {
+  background-color: red;
+  left: 10px;
+  top: 10px;
+
+}
+
+.green {
+  background-color: green;
+  left: 50px;
+  top: 50px;
+
+}
+
+.blue {
+  background-color: blue;
+  left: 90px;
+  top: 90px;
+}
+
+.wrapper {
+  position: relative;
+  border: 1px solid black;
+  /* 자식 요소가 absolute 이면 컨텐츠 높이 사라짐 */
+  /* 높이값을 수동으로 줘야 함 */
+}

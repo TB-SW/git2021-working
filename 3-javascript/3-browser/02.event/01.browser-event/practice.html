@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+</head>
+
+<body style="width: 700px;" class="mx-auto">
+
+  <h1 class="text-center my-5">연락처, 알림</h1>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+  </script>
+  <form class="d-flex" id="form-input" onsubmit="return false">
+    <input type="text" class="form-control me-2 form-input" placeholder="이름">
+    <input type="text" class="form-control me-2 form-input" placeholder="전화번호">
+    <input type="text" class="form-control me-2 form-input" placeholder="이메일">
+    <button type="button" class="btn btn-primary text-nowrap" id="add-button">추가</button>
+  </form>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>이름</th>
+        <th>전화번호</th>
+        <th>이메일</th>
+        <th>작업</th>
+      </tr>
+    </thead>
+    <tbody id="tr">
+
+    </tbody>
+  </table>
+
+  <script>
+    const input = document.querySelectorAll('.form-input');
+    const button = document.querySelector("#add-button");
+    const inputArray = Array.from(input);
+    const makeTr = document.querySelector("#tr");
+    const form = document.querySelector("#form-input")
+    let number = 1;
+
+
+    function add() {
+      for (let index of inputArray) {
+        console.log(index.value);
+      }
+      if (!inputArray[0].value || !inputArray[1].value || !inputArray[2].value) {
+        const alert = /*html*/ `
+   <div class=“alert alert-dark alert-dismissible my-2” role=“alert”>
+     입력값이 없습니다.
+     <button type=“button” class=“btn-close” data-bs-dismiss=“alert” aria-label=“Close”></button>
+   </div>
+   `;
+
+        form.insertAdjacentHTML("afterend", alert);
+        return;
+      }
+      const tr = /*html*/ `
+   <td>${number++}</td>
+   <td>${inputArray[0].value}</td>
+   <td>${inputArray[1].value}</td>
+   <td>${inputArray[2].value}</td>
+   <td id=“removeBtn”><button class=“btn btn-outline-secondary btn-sm remove”>삭제</button></td>
+   `;
+
+      makeTr.insertAdjacentHTML("afterend", tr);
+      form.reset();
+
+      const removeBtn = document.querySelector("#removeBtn");
+      removeBtn.addEventListener('click', remove);
+    }
+
+    function remove(event) {
+      const tr = event.target.parentNode.parentNode;
+      tr.remove();
+    }
+
+
+    button.addEventListener('click', add)
+  </script>
+</body>
+
+</html>
