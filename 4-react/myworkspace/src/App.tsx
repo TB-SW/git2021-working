@@ -6,9 +6,11 @@
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Suspense, lazy } from "react";
-
+import { Provider } from 'react-redux';
+import { store } from './store';
 import Home from "./domain/Home";
 import Profile from "./domain/profile/Profile";
+
 
 // SPA(Single Page Application)
 // : 페이지 파일이 1개, index.html
@@ -22,9 +24,11 @@ const Todo = lazy(() => import("./domain/TodoInlineEdit"));
 const Feed = lazy(() => import("./domain/feed/Feed"));
 const Photo = lazy(() => import("./domain/Photo"));
 
+
 // React == 컴포넌트 개발 라이브러리
 function App() {
   return (
+    <Provider store={store}>
     <Router>
       {/* main container */}
       <div className="mx-auto">
@@ -64,7 +68,8 @@ function App() {
           </Suspense>
         </main>
       </div>
-    </Router>
+      </Router>
+      </Provider>
   );
 }
 
