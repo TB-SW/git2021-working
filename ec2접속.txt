@@ -1,0 +1,10 @@
+ssh -i "myworkspace.pem" ubuntu@ec2-3-38-101-83.ap-northeast-2.compute.amazonaws.com
+
+퍼블릭 IPv4주소랑 위 숫자랑 같은지 확인 
+
+
+설정 참고 사이트
+https://techsoda.net/windows10-pem-file-permission-settings/ 
+
+내 컴퓨터 계정확인 해서 설정해줘야 한다. 
+윈도우키 눌러서 계정 으로 검색해서 계정이름 확인 
