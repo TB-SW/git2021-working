@@ -17,7 +17,6 @@ import { useState } from "react";
 //     결과값: 50
 //     <div>50</div>
 
-
 const Calculator = () => {
   const [result, setResult] = useState(0);
   const calculate = () => {

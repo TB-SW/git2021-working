@@ -64,7 +64,6 @@ cat
 : 파일 내용보기
 : cat 파일경로
 
-
 rm(remove)
 : 파일 삭제
 : rm 파일명
@@ -95,7 +94,12 @@ rmdir(remove directory)
 
 
 -- 패키지관리(apt)
-sudo apt update: 최신 패키지 저장소 주소로 업데이트
+sudo 명령어 : 관리자 권한 실행
+sudo apt update: 최신 패키지 저장소 주소로 업데이트 (최신화)
+-> 패키지 저장소(설치할 수 있는 프로그램 목록 관리)
+
+(선택)sudo apt upgrade : 설치된 패키지들을 최신버전으로
+
 sudo apt install 패키지명: 패키지 설치
 -> sudo apt install default-jre ex) 자바 설치
 -> sudo(관리자 권한으로 실행)

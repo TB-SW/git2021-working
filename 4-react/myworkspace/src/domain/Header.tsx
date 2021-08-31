@@ -13,7 +13,6 @@
 interface HeaderProp {
   // color: string;
   // union type: 값의 집합
-  // color: string;
   color: "green" | "red" | "blue";
   title: string;
 }

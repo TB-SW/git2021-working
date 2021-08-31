@@ -1,6 +1,6 @@
 // Calculator 컴포넌트
 
-import {useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 // 1. 버튼을 클릭하면 prompt로 입력값을 두번 받음
 // a = prompt, b = prompt
@@ -23,7 +23,7 @@ const Calculator = () => {
   const inputBRef = useRef<HTMLInputElement>(null);
   const inputOpRef = useRef<HTMLInputElement>(null);
 
-  const Calculate = () => {
+  const calculate = () => {
     const a = inputARef.current?.value;
     const b = inputBRef.current?.value;
     const op = inputOpRef.current?.value;
@@ -45,13 +45,12 @@ const Calculator = () => {
   return (
     <div>
       <h2>Calculator</h2>
-      {/* 입력박스 3개, 첫번째 숫자/두번째 숫자/ 연산자 */}
       <input ref={inputARef} placeholder="첫번째 숫자" />
       <input ref={inputBRef} placeholder="두번째 숫자" />
-      <input ref={inputOpRef} placeholder="연산자 (+, -, *, /)" />
+      <input ref={inputOpRef} placeholder="연산자(+, -, *, /)" />
       <button
         onClick={() => {
-          Calculate();
+          calculate();
         }}
       >
         CALCULATE

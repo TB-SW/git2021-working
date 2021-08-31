@@ -1,8 +1,12 @@
-@import "./components/Bootstrap.tsx";
-
+@import "./styles/bootstrap-custom.scss";
+@import "./styles/app-variables.scss";
 
 .app-bar {
   height: $app-bar-height;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .drawer-menu {
