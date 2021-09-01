@@ -3,7 +3,7 @@ import produce from "immer";
 
 import TodoEditModal from "./TodoEditModal";
 // ./type.ts/js/tsx가 없으면, ./type/index.ts/js/tsx 로딩함
-import { TodoItemState } from "./type";
+import { TodoItemState } from "./type/index";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 
@@ -32,17 +32,18 @@ const Todo = () => {
   const [todoList, setTodoList] = useState<TodoItemState[]>([
     {
       id: 2,
-      memo: "Typescript",
+      memo: "게시글2",
       username: profile.username,
       createTime: new Date().getTime(),
     },
     {
       id: 1,
-      memo: "React State 연습",
+      memo: "게시글1",
       username: profile.username,
       createTime: new Date().getTime(),
     },
   ]);
+
 
   // 수정 팝업을 띄울지 아닐지
   const [isEdit, setIsEdit] = useState(false);
@@ -96,9 +97,9 @@ const Todo = () => {
 
   const save = (editItem: TodoItemState) => {
     console.log(editItem);
-    setTodoList(
+    setTodoList( 
       produce((state) => {
-        const item = state.find((item) => item.id === editItem.id);
+        const item = state.find((item) => item.id === editItem.id); 
         if (item) {
           item.memo = editItem.memo;
         }

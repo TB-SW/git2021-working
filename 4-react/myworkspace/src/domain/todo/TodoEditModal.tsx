@@ -22,7 +22,6 @@ const TodoEditModal = ({ item, onClose, onSave }: ModalProp) => {
       memo: inputRef.current?.value, // 수정된 입력값
       createTime: item.createTime,
     };
-
     onSave(todo);
   };
 
