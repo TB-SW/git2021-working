@@ -1,4 +1,5 @@
 ssh -i "myworkspace.pem" ubuntu@ec2-3-38-101-83.ap-northeast-2.compute.amazonaws.com
+scp -i "myworkspace.pem" -r ./build/*  ubuntu@ec2-3-38-101-83.ap-northeast-2.compute.amazonaws.com:/home/ubuntu/web/myworkspace
 
 퍼블릭 IPv4주소랑 위 숫자랑 같은지 확인 
 
